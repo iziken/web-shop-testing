@@ -1,0 +1,314 @@
+{
+  "info": {
+    "_postman_id": "59a84a85-3bda-4f6d-bfe9-363161bdddfd",
+    "name": "QA60",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52212842",
+    "_collection_link": "https://go.postman.co/collection/52212842-59a84a85-3bda-4f6d-bfe9-363161bdddfd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Получение списка всех пользователей",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/http-lab/users?X-Course-Session=student-demo",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "http-lab",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "X-Course-Session",
+              "value": "student-demo"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Создание пользователя",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Серёжа\",\r\n  \"email\": \"serega@example.ru\",\r\n  \"role\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/http-lab/users?X-Course-Session=student-demo",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "http-lab",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "X-Course-Session",
+              "value": "student-demo"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Удаление пользователя",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/http-lab/users/592e4122-8ef8-47b1-983d-745b369b735a?X-Course-Session=student-demo",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "http-lab",
+            "users",
+            "592e4122-8ef8-47b1-983d-745b369b735a"
+          ],
+          "query": [
+            {
+              "key": "X-Course-Session",
+              "value": "student-demo"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Получить каталог пиццы",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/products",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавить пиццу в корзину",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"product_id\": \"pizza-four-cheese\", \"quantity\": 2}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/cart",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Проверить корзину с промокодом",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/cart?promo_code=QA60",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "cart"
+          ],
+          "query": [
+            {
+              "key": "promo_code",
+              "value": "QA60"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Очистить корзину",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/cart",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавить чизкейк в корзину (негативный)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"product_id\": \"dessert-cheesecake\", \"quantity\": 2}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/cart",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавить 21 единицу одного товара в корзину (негативный)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"product_id\": \"pizza-pepperoni\", \"quantity\": 21}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://aiqa.su/api/course/v1/shop/cart",
+          "protocol": "https",
+          "host": [
+            "aiqa",
+            "su"
+          ],
+          "path": [
+            "api",
+            "course",
+            "v1",
+            "shop",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
