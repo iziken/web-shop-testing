@@ -1,6 +1,6 @@
 # 🛒 Web shop testing
 
-Я протестировал учебное приложение https://aiqa.su/base/shop и подготовил различные виды тестовой документации:
+Я протестировал приложение https://aiqa.su/base/shop и подготовил различные виды тестовой документации:
 
 <ul>
   <li><a href="https://docs.google.com/document/d/1QYRExgRfoiouVC6GILu5wknE0fMvLatJ2a1HE6MIHbE/edit?usp=sharing">Test plan</a> описание того, что и как тестировать, основные этапы работы, риски</li> 
